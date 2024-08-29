@@ -17,6 +17,8 @@ public class AccountController(DataContext context, ITokenService tokenService):
     {
         if (await UserExists(registerDTO.UserName) ) return BadRequest("Username ya existe");
 
+        return Ok();
+    /*
         using var hmac = new HMACSHA512();
 
         var user = new AppUser
@@ -35,6 +37,9 @@ public class AccountController(DataContext context, ITokenService tokenService):
             Token = tokenService.CreateToken(user)
 
         };
+
+        */
+
 
     }
 
