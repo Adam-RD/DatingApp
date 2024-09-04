@@ -50,14 +50,15 @@ namespace API.Services
            .ToListAsync();
         }
 
-        public Task<bool> SaveAllAsync()
+       public async Task<bool> SaveAllAsync()
         {
-            throw new NotImplementedException();
+            return await context.SaveChangesAsync() > 0;
         }
 
-        public void Update(AppUser user)
+
+       public void Update(AppUser user)
         {
-            throw new NotImplementedException();
+            context.Entry(user).State = EntityState.Modified;
         }
 
        
